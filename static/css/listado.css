@@ -1,0 +1,59 @@
+body {
+    background-color: #0d1422;
+    color: #fff;
+}
+
+.listado-inscriptos {
+    background: #0d1422;
+    color: #fff;
+    border: none;
+}
+
+.list-title {
+    text-align: center;
+    padding: 50px;
+}
+
+h3 {
+    font-style: bold;
+    font-weight: 600;
+}
+
+.list-columna {
+    background: #fff;
+    color: #0d1422;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 3px;
+    border: 2px solid #0d1422;
+}
+
+.list-body {
+    background: #0f2d68;
+    border: 2px solid #0d1422;
+}
+
+footer.page-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    background-color: #000;
+}
+
+@media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 480px) {
+        .list-body, .list-columna {
+            font-size: 80%;
+        }
+    }
+    .list-body, .list-columna {
+        font-size: 90%;
+    }
+
+    .list-title {
+        font-size: 200%;
+    }
+
+    .page-footer {
+        font-size: 90%;
+    }
+}

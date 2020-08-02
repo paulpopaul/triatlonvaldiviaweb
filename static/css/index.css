@@ -1,0 +1,105 @@
+.listado-inscritos:hover {
+    color: #fff;
+}
+
+.imagen-inscripciones-abiertas{
+    margin: 0 auto;
+}
+
+.imagen-inscripciones-cerradas{
+    margin: 30px auto;
+}
+
+.title-card {
+    font-size: 20px;
+    margin: 0;
+}
+
+.text-card {
+    font-size: 16px;
+}
+
+.mapa-google {
+    max-width: 100%;
+    height: 100%;
+}
+
+td, tr, table, th {
+}
+
+.tab-small {
+    max-width: 50%;
+}
+
+.tab-small-50 {
+    max-width: 100%;
+}
+
+.title-tab-small, .title-row-tab-main {
+    font-size: 24px;
+}
+
+.title-small-tab {
+}
+
+.title-main-small-tab {
+    font-size: 28px;
+}
+
+.title-row-tab-main {
+    font-weight: 900;
+}
+
+.tab-main {
+}
+
+td, th {
+    padding: 0;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 0;
+}
+
+.tab-main-content {
+    color: #000;
+}
+
+.tab-small {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 3px;
+}
+
+.del-margin-topbottom {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+
+.precio {
+    font-size: 28px;
+}
+
+.img-cat-index {
+    display: block;
+    margin: 25px auto;
+}
+
+.img-pro-index {
+    display: block;
+    margin: 25px auto;
+}
+
+.img-org-index {
+    width: 100%;
+    padding: 0 25%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.container .row {
+    margin-left: 0;
+    margin-right: 0;
+}

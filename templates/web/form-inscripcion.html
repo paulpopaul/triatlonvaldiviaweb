@@ -1,0 +1,226 @@
+{% extends 'web/base.html' %}{% load static %}{% load staticfiles %}
+{% block title %}Triatlón Rotary Valdivia | CL{% endblock %}
+{% block description %}Triatlón Rotary Valdivia | CL{% endblock %}
+{% block keywords %}Triatlón Rotary Valdivia | CL{% endblock %}
+{% block extra-head %}
+    {% comment %}
+    Exclusivo para vista del formulario de inscripción:
+    {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/inscripcion.css' %}">
+    <script type="text/javascript" src="{% static 'js/validarut.js' %}"></script>
+
+{% endblock %}
+{% block header %}
+    <header>
+        <nav class="transparent menu-nav uppercased">
+            <div class="nav-wrapper container">
+                <a class="logorotary" href="/">
+                    <img src="{% static 'img/logo-header.svg' %}" class="logo-navbar">
+                </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="large material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="menu-nav2" href="/">Inicio</a></li>
+                    <li><a class="menu-nav2" href="/#circuito">Circuito</a></li>
+                    <li><a class="menu-nav2" href="/#programa">Programa</a></li>
+                    <li><a class="menu-nav2" href="/#hoteles">Alojamiento</a></li>
+                    <li><a class="menu-nav2" href="/#contacto">Contacto</a></li>
+                    <li>
+                        <a class='dropdown-button btn-floating transparent' href='#' data-activates='idioma'>
+                            <img src="{% static 'img/cl.svg' %}" alt="Bandera Chile" class="flag">
+                        </a>
+                    </li>
+                    <li class="strong"><strong>ES</strong></li>
+                </ul>
+                <ul class="side-nav center-align" id="mobile-demo">
+                    <li><a href="/#circuito">Circuito</a></li>
+                    <li><a href="/#programa">Programa</a></li>
+                    <li><a href="/#hoteles">Hoteles</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
+                </ul>
+                <hr class="bottom-nav">
+            </div>
+            <!-- Dropdown Structure -->
+            {% comment %}
+            <ul id='idioma' class='dropdown-content transparent'>
+                <li>
+                    <a class='link-dropdown' href='#' data-activates='idioma'>
+                        <img src="{% static 'img/al.png' %}" alt="Bandera Chile" class="dropdown-flag circle">
+                        <span>al</span>
+                    </a>
+                </li>
+                <li>
+                    <a class='link-dropdown' href='#' data-activates='idioma'>
+                        <img src="{% static 'img/en.png' %}" alt="Bandera Chile" class="dropdown-flag circle">
+                        <span>al</span>
+                    </a>
+                </li>
+            </ul>
+            {% endcomment %}
+        </nav>
+    </header>
+    <div id="inscribete" class="modal black-text">
+        <div class="modal-content center">
+            <h4>TÉRMINOS Y CONDICIONES</h4>
+            <span>"Declaro que mi representado se encuentra/me encuentro en condiciones aptas tanto de salud física como mental, para participar en el evento denominado "TriRotary Valdivia", que se desarrollará el Sábado 18 de Febrero del 2017 en Valdivia.<br> Declaro que la participación del inscrito en el evento denominado "TriRotary Valdivia", es de carácter voluntario y que no recibirá remuneración por tomar parte del mismo. <br>Igualmente declaro conocer y aceptar el Reglamento del evento denominado "TriRotary Valdivia", quedando obligado personalmente/mi representado a respetar y cumplir todas las medidas de seguridad que se aporten y las instrucciones que serán impartidas antes, durante y después de finalizado dicho evento, sea por sus organizadores o por cualquier autoridad.<br> Relevo y eximo totalmente de toda responsabilidad a los organizadores, promotores y/o auspiciadores del evento, por cualquier accidente, daño o perjuicio que el declarante/mi representado pueda sufrir con ocasión de mi/su participación en el evento, en especial ante el incumplimiento de las instrucciones que sean impartidas.<br> Autorizo a los organizadores, promotores y/o auspiciadores de "TriRotary Valdivia" para que utilicen las imágenes fotográficas y/o de videogramas que sean confeccionadas antes, durante o después del evento, en las cuales pudiese aparecer el declarante/mi representado, facultándolos además a utilizar y/o transferir los datos que han sido aportados en el presente instrumento, de conformidad a lo dispuesto en el art. 4° de la ley 19.628. <br>Declaro haber leído íntegramente el presente documento y que los datos que he incorporado al mismo son veraces, haciéndome plenamente responsable de la inclusión de los antecedentes que no lo sean."<br><br>
+Acepto recibir mail informativo de la carrera.<br><br></span>
+            <a class="waves-light btn btn-inscribete" href="{% url 'inscripcion' %}">Aceptar</a>
+        </div>
+    </div>
+{% endblock %}
+{% block main %}
+    <div class="container container2 form-group " id="inscripcion">
+        <h3 class="form-title uppercased">Formulario de inscripción</h3>
+        {% comment %}<h3 class="title-section">Contacto</h3>{% endcomment %}
+        <div class="row ">
+            <form action="" name="form_inscripcion" method="post" class="col l8 m12 uppercased white-text">
+                {% csrf_token %}
+                <div class="input-field col s12 l6">
+                    {{ form.rut }}
+                    <label for="{{ form.rut.id_for_label }}">Rut</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.nombre }}
+                    <label for="{{ form.nombre.id_for_label }}">nombre</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.apellido_pat }}
+                    <label for="{{ form.apellido_pat.id_for_label }}">Apellido Paterno</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.apellido_mat }}
+                    <label for="{{ form.apellido_mat.id_for_label }}">Apellido Materno</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.sexo }}
+                    <label for="{{ form.sexo.id_for_label }}">Sexo</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.email }}
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.fecha_nacimiento }}
+                    <label for="{{ form.fecha_nacimiento.id_for_label }}">Fecha de Nacimiento</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.telefono }}
+                    <label for="{{ form.telefono.id_for_label }}">Teléfono</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.celular }}
+                    <label for="{{ form.celular.id_for_label }}">Celular</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.comuna }}
+                    <label for="{{ form.comuna.id_for_label }}">Comuna</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.direccion }}
+                    <label for="{{ form.direccion.id_for_label }}">Direccion</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.club }}
+                    <label for="{{ form.club.id_for_label }}">Club</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.talla_polera }}
+                    <label for="{{ form.talla_polera.id_for_label }}">Talla Polera</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.nacionalidad }}
+                    <label for="{{ form.nacionalidad.id_for_label }}">Nacionalidad</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.medio_pago }}
+                    <label for="{{ form.medio_pago.id_for_label }}">Medio de Pago</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    {{ form.edad_y_precio }}
+                    <label for="{{ form.edad_y_precio.id_for_label }}">Categoría a Competir</label>
+                </div>
+                {% if form.errors %}
+                    <div class="col s12">
+                        {{ form.rut.errors }}
+                        {{ form.nombre.errors }}
+                        {{ form.edad_y_precio.errors }}
+                        {{ form.apellido_pat.errors }}
+                        {{ form.apellido_mat.errors }}
+                        {{ form.sexo.errors }}
+                        {{ form.email.errors }}
+                        {{ form.fecha_nacimiento.errors }}
+                        {{ form.telefono.errors }}
+                        {{ form.celular.errors }}
+                        {{ form.comuna.errors }}
+                        {{ form.talla_polera.errors }}
+                        {{ form.direccion.errors }}
+                        {{ form.club.errors }}
+                        {{ form.medio_pago.errors }}
+                    </div>
+                {% endif %}
+                <div class="col s12">
+                    <button type="submit" onclick="javascript:return Rut(document.form_inscripcion.id_rut.value)" class="btn4000 col s12 l12 center">Enviar</button>
+                </div>
+            </form>
+            <div class="col l4 m12 uppercased white-text">
+                <div class="aside-form hide-on-small-and-down">
+                    <div class="item-aside-form">
+                        <span class="text-aside-form title-aside-form">Banco de Chile</span><br>
+                        <span class="text-aside-form title-aside-form">Cuenta Corriente</span><br>
+                        <span class="text-aside-form">N° : 251-0141010</span><br>
+                        <span class="text-aside-form">A nombre de Rotary Club Valdivia</span><br>
+                        <span class="text-aside-form">Rut: 65.117.561-5</span><br>
+                    </div>
+                    <div class="item-aside-form">
+                        <span class="text-aside-form title-aside-form">Email</span><br>
+                        <span class="text-aside-form">contacto@trirotaryvaldivia.cl</span><br>
+                    </div>
+                    <div class="item-aside-form">
+                        <span class="text-aside-form title-aside-form">Teléfono</span><br>
+                        <span class="text-aside-form">+569 9811 4750</span><br>
+                        <span class="text-aside-form">(Felipe Zapata)</span><br>
+                    </div>
+                    <div class="item-aside-form">
+                        <span class="text-aside-form title-aside-form">Dirección</span><br>
+                        <span class="text-aside-form">Avenida España 1025</span><br>
+                        <span class="text-aside-form">Región de los Ríos</span><br>
+                        <span class="text-aside-form">Valdivia, Chile</span><br>
+                    </div>
+                </div>
+                <div class="aside-form hide-on-med-and-up container-datos-mobil">
+                    <div class="item-aside-form">
+                        <div class="item-aside-form">
+                            <span class="text-aside-form title-aside-form">Banco de Chile</span><br>
+                            <span class="text-aside-form title-aside-form">Cuenta Corriente</span><br>
+                            <span class="text-aside-form">N° : 251-0141010</span><br>
+                            <span class="text-aside-form">A nombre de Rotary Club Valdivia</span><br>
+                            <span class="text-aside-form">Rut:65.117.561-5</span><br>
+                        </div>
+                        <div class="item-aside-form">
+                            <span class="text-aside-form title-aside-form">Email</span><br>
+                            <span class="text-aside-form">contacto@trirotaryvaldivia.cl</span><br>
+                        </div>
+                        <div class="item-aside-form">
+                            <span class="text-aside-form title-aside-form">Teléfono</span><br>
+                            <span class="text-aside-form">+569 9811 4750</span><br>
+                            <span class="text-aside-form">(Felipe Zapata)</span><br>
+                        </div>
+                        <div class="item-aside-form">
+                            <span class="text-aside-form title-aside-form">Dirección</span><br>
+                            <span class="text-aside-form">Avenida España 1025</span><br>
+                            <span class="text-aside-form">Región de los Ríos</span><br>
+                            <span class="text-aside-form">Valdivia, Chile</span><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %}
+    direccion = forms.CharField(max_length=64)
+    distancia = forms.Select()
+    categoria = forms.Select(choices=CHOICES_CATEGORIA)
+    club = forms.CharField(max_length=32)
+    talla_polera = forms.Select(choices=CHOICES_TALLA)
+    medio_pago = forms.Select(choices=CHOICES_PAGO)
+    {% endcomment %}
+{% endblock %}

@@ -1,0 +1,282 @@
+{% extends 'web/base.html' %}{% load static %}{% load staticfiles %}
+{% block title %}TriRotary Valdivia | CL{% endblock %}
+{% block description %}TriRotary  Valdivia | CL{% endblock %}
+{% block keywords %}TriRotary Valdivia | CL{% endblock %}
+
+{% block extra-head %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+<!-- Block Main -->
+{% block main %}
+    <div class="slider slider-main">
+        <!-- Contenido del slider prinipal -->
+        <div class="titulo-slider-permanent">
+            <!-- Logo del evento -->
+            <img src="{% static 'img/Logo2.svg' %}" alt="" class="logotype-principal">
+            <br>
+            <div class="countdown">
+                <span class="inicia-en">Faltan:</span>
+                <!-- Cuenta atrás: -->
+                <div id="DateCountdown" data-date="2018-02-03 00:00:00" style="width: 100%" class="cuenta-atras"></div>
+            </div>
+            {% comment %}
+            <a class="inscripciones-abiertas toplinks" onclick="Materialize.toast('Lo sentimos, inscripciones cerradas', 5000)">
+                <img src="{% static 'img/inscripciones-cerradas.png' %}" alt="" class="imagen-inscripciones-cerradas">
+            </a>
+            {% endcomment %}
+            <br>
+        </div>
+        <!-- Contenido del slider prinipal -->
+        <!-- Imágenes del slider -->
+        <ul class="slides">
+            <li>
+                <img src="{% static 'img/tria1-min.jpg' %}"> <!-- random image -->
+            </li>
+            <li>
+                <img src="{% static 'img/tria2-min.jpg' %}"> <!-- random imagea -->
+            </li>
+            <li>
+                <img src="{% static 'img/tria3-min.jpg' %}"> <!-- random image -->
+            </li>
+        </ul>
+        <!-- Imágenes del slider -->
+    </div>
+    <!-- Botón ir a Listado Inscritos -->
+    <a href="{% url 'listado_inscritos' 2018 %}" class="btn listado-inscritos waves-effect">¡Listado de Inscritos 2018!</a>
+    <a href="/static/docs/reglamento.pdf" target="_blank" class="btn listado-inscritos waves-effect" style="background-color: #5BC0BD">Reglamento</a>
+
+    <!-- Botón ir a Listado Inscritos -->
+    <!-- Historia de Rotary -->
+    <div class="container-no-main container-historia" id="circuito">
+        <span class="title-container center uppercased" style="color: #17202f; font-weight: 900">Historia y mensaje</span>
+        <span class="title-container center uppercased" style="color: #f7a91d; margin-bottom: 8px; font-weight: 900">Rotary Club Valdivia</span>
+        <div class="historia-color" style="">
+            <div class="parrafo-historia">"Rotary es una institución humanitaria, presente en los cinco continentes, fundada en 1905,
+                e integrada por hombres y mujeres profesionales y de empresas y voluntarios dispuestos a emprender causas
+                destinadas a cambiar las vida de comunidades necesitadas.
+            </div>
+            <div class="parrafo-historia">Rotary Club Valdivia, que es parte de esta red mundial, mira a su comunidad local para descubrir sus
+                necesidades las que busca resolver, dentro de sus posibilidades, usando el esfuerzo, la voluntad y los
+                contactos de sus socios, actitud visible en su historia que ya tiene 90 años.
+            </div>
+            <div class="parrafo-historia">Traer el triatlón a la Región de los Rios es una de estas acciones por las cuales Rotary Club Valdivia
+                aporta sin pensar en si mismo. Es por ello que los recursos recaudados de esta triatlón irán destinados
+                a proyectos sustentables para Valdivia y sus habitantes”.
+            </div>
+        </div>
+        <div class="row historia-color">
+            <img src="/static/img/rotary_al_servicio.png" alt="" class="img-rotary_al_servicio img-responsive">
+        </div>
+    </div>
+    <!-- End Historia de Rotary -->
+    <!-- Container Circuitos -->
+    <div class="container-no-main container-circuitos" id="circuito">
+        <span class="title-container txt-blue center">Circuito</span>
+        <img src="{% static 'img/circuitos/1 - natacion.jpg' %}" class="img-circuito responsive-img" alt="">
+        <img src="{% static 'img/circuitos/2 - ciclismo.jpg' %}" class="img-circuito responsive-img" alt="">
+        <img src="{% static 'img/circuitos/3 - trote.jpg' %}" class="img-circuito responsive-img" alt="">
+    </div>
+    <!-- End Container Circuitos -->
+    <!-- Container Categorías -->
+    <!-- Row Horizontal   -   Col Vertical -->
+    <!-- Container Categorías -->
+    <div class="container-no-main container-categorias" id="categorias">
+        <span class="title-container white-text center">Categorias</span>
+        <span class="subtitle-container center" style="color: #ff801b;">Mujeres / Hombres</span>
+        <img src="/static/img/cat-.jpg" class="img-cat-index responsive-img">
+    </div>
+    <!-- End Container Categorías -->
+    <!-- Contenedor de Programa -->
+    <div class="container-no-main container-programa" id="programa">
+        <span class="title-container txt-blue center">Programa</span>
+        <div class="row tab-main-content">
+            <img src="/static/img/programa.jpg" alt="" align="center" class="img-pro-index responsive-img">
+        </div>
+    </div>
+    <!-- End Contenedor de Programa -->
+    <!-- Contenedor de Alojamientos -->
+    <div class="container-no-main container-hoteles " id="servicios">
+        <span class="title-container white-text center">Servicios</span>
+        <div class="row tab-main-content servicios-content">
+            <a target="_blank" href="http://www.centrovivovaldivia.cl"><img src="{% static 'img/servicios/1-centrovivo.jpg' %}" alt="" class="col s6 m3 l3 servicio-img"></a>
+            <a target="_blank" href="http://www.descubrelosrios.cl"><img src="{% static 'img/servicios/2-descubrelosrios.jpg' %}" alt="" class="col s6 m3 l3 servicio-img"></a>
+            <a target="_blank" href="http://vivevaldivia.cl"><img src="{% static 'img/servicios/3-vivevaldivia.jpg' %}" alt="" class="col s6 m3 l3 servicio-img"></a>
+            <a target="_blank" href="http://www.cnc.cl"><img src="{% static 'img/servicios/4-camaracomercio.jpg' %}" alt="" class="col s6 m3 l3 servicio-img"></a>
+            <a target="_blank" href="http://valdiviaturismo.cl"><img src="{% static 'img/servicios/5-valdiviaturismo.jpg' %}" alt="" class="col s6 m3 l3 servicio-img"></a>
+            <a target="_blank" href="http://www.mundodreams.com/?am_force_theme_layout=mobile"><img src="{% static 'img/servicios/6-dreams.jpg' %}" alt="" class="col s6 m3 l3 servicio-img"></a>
+            <a target="_blank" href="/static/docs/TARIFARIO_ALOJAMIENTO_2017.pdf"><img src="{% static 'img/servicios/7-alojamientos.jpg' %}" alt="" class="col s6 m3 l3 servicio-img"></a>
+            <a target="_blank" href="http://www.centrovivovaldivia.cl/mapa-interactivo/"><img src="{% static 'img/servicios/8-mapa.jpg' %}" alt="" class="col s6 m3 l3 servicio-img"></a>
+        </div>
+    </div>
+    <!-- End Contenedor de Alojamientos -->
+    <!-- Contenedor de Organizadores -->
+    <div class="container-no-main container-organizadores" id="organizadores">
+        <div class="row">
+            <div class="hide-on-large-only">
+                <div class="subseccion">
+                    <span class="title-container txt-blue center">Organiza</span>
+                    <div class="row img-sponsor-center">
+                        <img src="/static/img/sponsors/rotary.jpg" alt="" class="img-sponsor-center">
+                    </div>
+                </div>
+                <div class="subseccion">
+                    <span class="title-container txt-blue center">Embajadora</span>
+                    <span class="txt-blue center text-embajadora">Carolina Trewhela Pfeifer</span>
+                </div>
+                <div class="subseccion">
+                    <span class="title-container txt-blue center">Produce</span>
+                    <div class="row img-sponsor-center">
+                        <img src="/static/img/sponsors/mipies.jpg" alt="" class="img-sponsor-center">
+                    </div>
+                </div>
+            </div>
+            <div class="hide-on-med-and-down">
+                <div class="subseccion col l4 m12">
+                    <span class="title-container txt-blue center">Organiza</span>
+                    <div class="row img-sponsor-center">
+                        <img src="/static/img/sponsors/rotary.jpg" alt="" class="img-sponsor-center">
+                    </div>
+                </div>
+                <div class="subseccion col l4 m12">
+                    <span class="title-container txt-blue center">Embajadora</span>
+                    <span class="txt-blue center text-embajadora">Carolina Trewhela Pfeifer</span>
+                </div>
+                <div class="subseccion col l4 m12">
+                    <span class="title-container txt-blue center">Produce</span>
+                    <div class="row img-sponsor-center">
+                        <img src="/static/img/sponsors/mipies.jpg" alt="" class="img-sponsor-center">
+                    </div>
+                </div>
+            </div>
+
+            <div class="subseccion">
+                <span class="title-container txt-blue center">Auspicia</span>
+                <div class="row tab-main-content">
+                    <img src="/static/img/sponsors/logodreams.jpg" alt="" class="col l4 m4 s12">
+                    <img src="/static/img/sponsors/colun.jpg" alt="" class="col l4 m4 s12">
+                    <img src="/static/img/sponsors/logoferreteria.jpg" alt="" class="col l4 m4 s12">
+                </div>
+            </div>
+            <div class="subseccion">
+                <div class="row tab-main-content">
+                    <img src="/static/img/sponsors/dextro.jpg" alt="" align="center" class=" col m2 s6">
+                    <img src="/static/img/sponsors/sailfish.jpg" alt="" align="center" class="col m2 s6">
+                    <img src="/static/img/sponsors/compressport.jpg" alt="" align="center" class="col m4 s12">
+                    <img src="/static/img/sponsors/kestrel.jpg" alt="" align="center" class=" col m4 s12">
+                    <img src="/static/img/sponsors/img-5.jpg" alt="" align="center" class=" col m4 s12">
+                    <img src="/static/img/sponsors/img-6.jpg" alt="" align="center" class=" col m4 s12">
+                    <img src="/static/img/sponsors/img-7.jpg" alt="" align="center" class=" col m2 s12">
+                    <div class="row img-sponsor-center">
+                        <img src="/static/img/sponsors/nautica-kuntsmann.jpg" alt="" class="img-sponsor-center">
+                    </div>
+                </div>
+            </div>
+            <div class="subseccion">
+                <span class="title-container txt-blue center">Colaboran</span>
+                <div class="row tab-main-content">
+                    <img src="/static/img/sponsors/muni_valdivia.jpg" alt="" align="center" class=" col m2 s6">
+                    <img src="/static/img/sponsors/centrovivo.jpg" alt="" align="center" class=" col m2 s6">
+                    <img src="/static/img/sponsors/austral.jpg" alt="" align="center" class="col m4 s12">
+                    <img src="/static/img/sponsors/carabineros.jpg" alt="" align="center" class=" col m2 s6">
+                    <img src="/static/img/sponsors/armada.jpg" alt="" align="center" class=" col m2 s6">
+                    <div class="row img-sponsor-center">
+                        <img src="/static/img/sponsors/trichile.jpg" alt="" class="img-sponsor-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-no-main" id="" style="background-color: #F8B715; color: #0D1522;">
+        <div class="row">
+            <div class="container">
+                <span class="title-container center">Nuestro Facebook</span>
+                <span class="title-container center"><a target="_blank" href="https://www.facebook.com/trirotaryvaldivia/"><img src="/static/img/facebook-nav.svg" style="background-color: #F8B715; color: #0D1522;" class="img-sponsor-center center"></a></span>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Contenedor de Programa -->
+    <!-- Contenedor de Formulario de Contacto -->
+    <div class="section container-no-main scrollspy container-contacto" id="contacto">
+        <div class="container">
+            <span class="title-container white-text center">Contacto</span>
+            <span class="subtitle-container white-text center">Información | Auspicios | Sugerencias</span>
+            <div class="row">
+                <form action="" method="post" class="col l9 m12 uppercased contact">
+                    {% csrf_token %}
+                    <div class="input-field col s12 l6">
+                        {{ form.nombre.errors }}
+                        {{ form.nombre }}
+                        <label for="{{ form.nombre.id_for_label }}">Nombre</label>
+                    </div>
+                    <div class="input-field col s12 l6">
+                        {{ form.email.errors }}
+                        {{ form.email }}
+                        <label for="{{ form.email.id_for_label }}" data-error="wrong"
+                               data-success="right">Email</label>
+                    </div>
+                    <div class="input-field col s12">
+                        {{ form.mensaje.errors }}
+                        {{ form.mensaje }}
+                        <label for="{{ form.mensaje.id_for_label }}">Mensaje</label>
+                    </div>
+                    <div class="container-buttons-contact">
+                        <button type="submit" class="left waves-effect save btn btn-form-contact btn-enviar hide-on-small-only ">Enviar</button>
+                        <button type="reset" class="right waves-effect btn btn-form-contact btn-borrar hide-on-small-only">Borrar</button>
+                        <button type="submit" class="col s6 save btn btn-form-contact btn-enviar hide-on-med-and-up">Enviar</button>
+                        <button type="reset" class="col s6 waves-effect btn btn-form-contact btn-borrar hide-on-med-and-up">Borrar</button>
+                    </div>
+                </form>
+                <div class="col l3 m12 hide-on-small-only">
+                    <div class="aside-form">
+                        <div class="item-aside-form">
+                            <span class="right text-aside-form title-aside-form yellow-ultimate">Director Ejecutivo</span><br>
+                            <span class="right text-aside-form title-aside-form yellow-ultimate">Felipe Zapata Valenzuela</span><br>
+                        </div>
+                        <div class="item-aside-form">
+                            <span class="right text-aside-form yellow-ultimate">Secretario Rotary Club Valdivia </span>
+                        </div>
+                        <div class="item-aside-form">
+                            <span class="right text-aside-form yellow-ultimate">contacto@trirotaryvaldivia.cl</span><br>
+                            <p class="right text-aside-form yellow-ultimate"><a href="tel:+56998114750" class="yellow-ultimate"><img src="/static/img/icons/whatsapp.svg" width="18" height="18" alt="WhatsApp" style="margin: 0 5px">+56 9 98114750</a></p><br></div>
+                    </div>
+                </div>
+                <div class="col s12 hide-on-med-and-up">
+                    <div class="container-datos-mobil">
+                        <div class="item-aside-form">
+                            <span class="right text-aside-form title-aside-form yellow-ultimate">Director Ejecutivo</span><br>
+                            <span class="right text-aside-form title-aside-form yellow-ultimate">Felipe Zapata Valenzuela</span><br>
+                        </div>
+                        <div class="item-aside-form">
+                            <span class="right text-aside-form yellow-ultimate">Secretario Rotary Club Valdivia </span>
+                        </div>
+                        <div class="item-aside-form">
+                            <p class="right text-aside-form yellow-ultimate">contacto@trirotaryvaldivia.cl</p><br>
+                        </div>
+                        <div class="item-aside-form">
+                            <p class="right text-aside-form yellow-ultimate">
+                                <a href="tel:+56998114750" class="yellow-ultimate right">
+                                    <img src="/static/img/icons/whatsapp.svg" width="16" height="16" alt="WhatsApp" style="margin: 0 5px">+56 9 98114750
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- EndContenedor de Formulario de Contacto -->
+{% endblock %}
+<!-- EndBlock Main -->
+{% block js-xtra %}
+    <!-- TimeCircles code - Copyright (c) 2013 Wim Barelds -->
+    <!-- Import TimeCircles JS -->
+    <script src="{% static 'js/TimeCircles.js' %}"></script>
+    <!-- Function for TimeCircles -->
+    <script> $("#DateCountdown").TimeCircles({
+        "animation": "smooth", "bg_width": 0.2, "fg_width": 0.06, "circle_bg_color": "#60686F", "time": {
+            "Days": {"text": "Días", "color": "#5BC0BD", "show": true}, "Hours": {"text": "Horas", "color": "#5BC0BD", "show": true},
+            "Minutes": {"text": "Minutos", "color": "#5BC0BD", "show": true}, "Seconds": {"text": "Segundos", "color": "#5BC0BD", "show": true}
+        }
+    });    </script>
+{% endblock %}

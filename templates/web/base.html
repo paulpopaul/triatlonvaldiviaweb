@@ -1,0 +1,131 @@
+{% load static %}{% load staticfiles %}<!DOCTYPE html>
+{% block lang %}<html lang="es"><!-- Optimización Español :) -->{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}TriRotary Valdivia | CL{% endblock %}</title>
+    <meta name="description" content="{% block description %}TriRotary Valdivia | CL{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}TriRotary Valdivia | CL{% endblock %}">
+    <meta name="author" content="www.tucodigo.cl">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- Statics CSS & Images from icons -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}"/>
+    <link rel="apple-touch-icon" href="{% static 'img/ico-menu.svg' %}">
+    <meta name="theme-color" content="#0d1422">
+    <!-- Import Materialize -->
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <!-- Import Theme -->
+    <link rel="stylesheet" href="{% static 'css/ultimate.css' %}">
+    <link href="https://file.myfontastic.com/2m2tcduPNEh5pqm62aQ7QA/icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Others in head -->
+    {% block extra-head %}{% endblock %}
+    <!-- End Others in head -->
+</head>
+<body>
+<!-- Header Structure -->
+{% block header %}
+    <header>
+        <nav class="transparent menu-nav uppercased">
+            <div class="nav-wrapper container">
+                <a class="logorotary" href="/">
+                    <img src="{% static 'img/logo-header.svg' %}" class="logo-navbar">
+                </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="large material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a class="menu-nav2" href="/">Inicio</a></li>
+                    <li><a class="menu-nav2" href="/#circuito">Circuito</a></li>
+                    <li><a class="menu-nav2" href="/#programa">Programa</a></li>
+                    <li><a class="menu-nav2" href="/#servicios">Servicios</a></li>
+                    <li><a class="menu-nav2" href="/#contacto">Contacto</a></li>
+                    <li><a href="{% url 'inscripcion' %}" class="waves-light btn btn-inscribete">INSCRIBETE</a></li>
+                    <li>
+                        <a class='dropdown-button btn-floating transparent' target="_blank" href='https://www.facebook.com/trirotaryvaldivia/' data-activates='idioma'>
+                            <img src="{% static 'img/facebook-nav.svg' %}" alt="Bandera Chile" class="flag">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="side-nav center-align" id="mobile-demo">
+                    <li><a class="waves-light btn btn-inscribete" onclick="Materialize.toast('Lo sentimos, inscripciones cerradas', 5000)">INSCRIBETE</a></li>
+                    <li><a href="/#circuito">Circuito</a></li>
+                    <li><a href="/#categorias">Categorías</a></li>
+                    <li><a href="/#programa">Programa</a></li>
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
+                </ul>
+                <hr class="bottom-nav">
+            <span class="sin-lucro">Un triatlón sin fines de lucro</span><br>
+            </div>
+            <!-- Dropdown Structure -->
+            {% comment %}
+            <ul id='idioma' class='dropdown-content transparent'>
+                <li>
+                    <a class='link-dropdown' href='#' data-activates='idioma'>
+                        <img src="{% static 'img/al.png' %}" alt="Bandera Chile" class="dropdown-flag circle">
+                        <span>al</span>
+                    </a>
+                </li>
+                <li>
+                    <a class='link-dropdown' href='#' data-activates='idioma'>
+                        <img src="{% static 'img/en.png' %}" alt="Bandera Chile" class="dropdown-flag circle">
+                        <span>al</span>
+                    </a>
+                </li>
+            </ul>
+            {% endcomment %}
+        </nav>
+    </header>
+    <div id="inscribete" class="modal black-text">
+        <div class="modal-content center">
+            <h4>TÉRMINOS Y CONDICIONES</h4>
+            <span>"Declaro que mi representado se encuentra/me encuentro en condiciones aptas tanto de salud física como mental, para participar en el evento denominado "TriRotary Valdivia", que se desarrollará el Sábado 18 de Febrero del 2017 en Valdivia.<br> Declaro que la participación del inscrito en el evento denominado "TriRotary Valdivia", es de carácter voluntario y que no recibirá remuneración por tomar parte del mismo. <br>Igualmente declaro conocer y aceptar el Reglamento del evento denominado "TriRotary Valdivia", quedando obligado personalmente/mi representado a respetar y cumplir todas las medidas de seguridad que se aporten y las instrucciones que serán impartidas antes, durante y después de finalizado dicho evento, sea por sus organizadores o por cualquier autoridad.<br> Relevo y eximo totalmente de toda responsabilidad a los organizadores, promotores y/o auspiciadores del evento, por cualquier accidente, daño o perjuicio que el declarante/mi representado pueda sufrir con ocasión de mi/su participación en el evento, en especial ante el incumplimiento de las instrucciones que sean impartidas.<br> Autorizo a los organizadores, promotores y/o auspiciadores de "TriRotary Valdivia" para que utilicen las imágenes fotográficas y/o de videogramas que sean confeccionadas antes, durante o después del evento, en las cuales pudiese aparecer el declarante/mi representado, facultándolos además a utilizar y/o transferir los datos que han sido aportados en el presente instrumento, de conformidad a lo dispuesto en el art. 4° de la ley 19.628. <br>Declaro haber leído íntegramente el presente documento y que los datos que he incorporado al mismo son veraces, haciéndome plenamente responsable de la inclusión de los antecedentes que no lo sean."<br><br>
+Acepto recibir mail informativo de la carrera.<br><br></span>
+            <a class="waves-light btn btn-inscribete" href="{% url 'inscripcion' %}">Aceptar</a>
+        </div>
+    </div>
+{% endblock %}
+<!-- End Header Structure -->
+<!-- Main Structure -->
+<main>
+    {% block main %}
+    {% endblock %}
+</main>
+<!-- End Structure -->
+<!-- Footer Structure -->
+{% block footer %}
+    <footer class="page-footer">
+        <div class="container footer-container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <a class="logorotary" href="https://www.rotary.org/es">
+                        <img src="{% static 'img/logo-header.svg' %}" class="logo-navbar">
+                    </a>
+                    <p class="white-text text-black">Rotary Club Valdivia.</p>
+                    <p class="white-text text-black">Av. España 1025.</p>
+                    <p class="white-text text-black">Región de los Ríos.</p><br>
+                    <p><span class="hide-on-small-only">Diseño & </span>Desarrollo Web:<a target="_blank" href="mailto:hernan@tucodigo.cl"> Tú Código | CL</a>
+                        <a class="grey-text text-lighten-9 left"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+<!-- EndFooter Structure -->
+</body>
+{% block js %}
+    <!--  JQuery :v-->
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous">
+    </script>    <!--  Scripts-->
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+    <script src="{% static 'js/animate-scroll.js' %}"></script>
+    <script src="{% static 'js/init.js' %}"></script>
+    <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+    <script src="{% static 'js/init-animate.js' %}"></script>
+{% endblock %}
+<!-- Script Xtras Structure -->
+{% block js-xtra %}{% endblock %}
+<!-- End Script Xtras Structure -->
+</html>

@@ -1,0 +1,63 @@
+main {
+    background-color: transparent;
+}
+body {
+    background:#102d69; 
+}
+footer.page-footer {
+    background-color: #000;
+}
+ input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+    color: #000;
+}
+.form-title{
+    text-align:center;
+    padding:50px; 
+}
+h3 {
+    font-style:bold; 
+    font-weight: 600;
+}
+label {
+    font-style:bold;
+    font-weight: 600;
+    padding: 1px;
+}
+/*btn*/
+.btn4000 {
+    letter-spacing: 3px;
+    font-style:bold;
+    font-weight: 600;
+    border: none;
+    display: inline-block;
+    height: 60px;
+    line-height: 36px;
+    padding: 0 1rem;
+    border-radius:6px; 
+    text-transform: uppercase;
+    vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
+button[type="submit"]{
+    background: crimson;
+    color: #fff;
+    border-radius:none; 
+    line-height: 0;
+    margin:10px;
+}
+button[type="submit"]:hover{
+    background: black;
+    color:#fff;
+    border:0px;
+}
+/*btn*/
+a{
+    color:#fff;
+    font-weight: normal;
+}
+a:hover {
+    color:#5bc0bd;
+    position: relative;
+    background: none;
+    transition: all 0.4s;
+}
